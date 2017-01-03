@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>WebGL Sample</title>
+        <script src="script.js" type="text/javascript"></script>
+        <script id="vshader" type="x-shader/x-vertex">
+            attribute vec3 position;
+            uniform mat4 m_world;
+            uniform mat4 m_rotate;
+            void main(void) {
+                gl_Position = m_rotate * vec4(position, 1.0);
+            }
+        </script>
+
+        <script id="fshader" type="x-shader/x-fragment">
+            void main(void) {
+                gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" width=500 height=300></canvas>
+    </body>
+</html>
